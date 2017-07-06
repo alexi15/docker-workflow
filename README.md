@@ -28,5 +28,5 @@ This will run luigi on the file dockerTask2 witch contains the luigi task Docker
 > - sudo mv nextflow /bin
 
 ### Instruction to run nextflow
-In a terminal window navigate to luigi_docker/ and type in the command
+In a terminal window navigate to next_docker/ and type in the command
 > nextflow run helloDocker.nf 
