@@ -14,15 +14,17 @@ process splitLetters {
 
 
 process convertToUpper {
-    myfile = file('myfile.txt')
+    myFile = file("myfile.txt")
+    
     input:
     val x from reciever
 
     output:
-    stdout result
+    myFile.append(result)
 
     """
-    myfile.append($x)
+    cd ~/docker-workflow/next_docker
+    python hello.py
     """
 }
 
