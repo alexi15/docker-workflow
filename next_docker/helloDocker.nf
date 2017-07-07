@@ -16,6 +16,7 @@ process splitLetters {
 process convertToUpper {
     myFile = file("myfile.txt")
     
+    
     input:
     val x from reciever
 
@@ -23,8 +24,9 @@ process convertToUpper {
     myFile.append(result)
 
     """
-    cd ~/docker-workflow/next_docker
+    cd /home
     python hello.py
+    cat hello_world_out.txt 
     """
 }
 
