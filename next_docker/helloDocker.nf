@@ -15,21 +15,23 @@ process splitLetters {
 
 process convertToUpper {
     myFile = file("myfile.txt")
-    
-    
+
+
     input:
     val x from reciever
 
     output:
-    myFile.append(result)
+    val x into result
 
     """
-    cd /home
-    python hello.py
-    cat hello_world_out.txt 
+    cat $x | tr '[a-z]' '[A-Z]'
     """
 }
 
-result.subscribe {
+reciever.subscribe {
     println it.trim()
+}
+
+result.subscribe{
+    println it
 }
