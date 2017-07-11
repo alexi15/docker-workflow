@@ -1,8 +1,9 @@
-#PYTHONPATH='.' luigi --module luigiRandJoin luigiJoinRandTask --intRange 175 --stringRange 145 
+#PYTHONPATH='.' luigi --module luigiRandJoin luigiJoinRandTask --intRange 175 --stringRange 145
 import luigi
 from randomNumber import randInt
 from randString import randString
 import os
+
 class luigiCleanUp(luigi.Task):
     success = True
     def output(self):
@@ -45,7 +46,7 @@ class luigiJoinRandTask(luigi.Task):
     stringRange = luigi.IntParameter(default = 100)
     intRange = luigi.IntParameter(default = 100)
     def output(self):
-        return luigi.LocalTarget('randJoined.txt')
+        return luigi.LocalTarget('randJoined_{}_{}.txt'.format(self.intRange, self.stringRange))
     def requires(self):
         return {'ints': luigiRandInts(self.intRange), 'strings': luigiRandStrings(self.stringRange)}
     def run(self):
