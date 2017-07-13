@@ -99,3 +99,11 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#Luigi stuff
+*.tsv
+.deleted
+
+#nextflow stuff
+.nextflow.log.*
+
