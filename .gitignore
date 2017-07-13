@@ -106,4 +106,4 @@ ENV/
 
 #nextflow stuff
 .nextflow.log.*
-
+work/
