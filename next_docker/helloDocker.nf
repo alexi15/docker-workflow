@@ -24,7 +24,7 @@ process convertToUpper {
     val x into result
 
     """
-    cat $x | tr '[a-z]' '[A-Z]'
+    pwd
     """
 }
 

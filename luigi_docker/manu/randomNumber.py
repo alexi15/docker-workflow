@@ -7,7 +7,7 @@ def randInt(n):
     lis = []
     random.seed()
     for i in range(n):
-        sleep(0.5)
+        sleep(0.1)
         lis.append(randint(1,n))
     return lis
 

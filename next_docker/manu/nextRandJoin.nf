@@ -34,6 +34,7 @@ process randStrings{
     file "randStrings_${params.stringRange}.txt" into randstrings
 
     """
+    python hello.py
     #!/usr/bin/python
     from random import randint
     import random
